@@ -12,6 +12,8 @@ config.read('user.ini')
 personal_access_token = config.get('section_main', 'PAT')
 organization_url = config.get('section_main', 'ADO_URL')
 
+pprint.pprint("ADO_URL = " + organization_url)
+
 # Create a connection to the org
 credentials = BasicAuthentication('', personal_access_token)
 connection = Connection(base_url=organization_url, creds=credentials)
