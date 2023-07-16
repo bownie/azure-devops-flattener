@@ -1,6 +1,6 @@
 import pprint
 from configparser import ConfigParser
-from azure.devops.v7_1.work import TeamContext 
+from azure.devops.v7_1.work import TeamContext
 from azure.devops.connection import Connection
 from msrest.authentication import BasicAuthentication
 
@@ -40,9 +40,8 @@ for project in get_projects_response:
 
         try:
             backlog_configuration = work_client.get_backlog_configurations(team_context)
-            pprint.pprint("    " + backlog_configuration)
-        except:
-            pprint.pprint("  Can't get Backlog Configuration: no permission")
+        except TypeError as e:
+            pprint.pprint("  Can't get Backlog Configuration" + e)
 
         for work_item_type in work_item_tracking_client.get_work_item_types(project.id):
             print("  Work Item Type = " + work_item_type.name +
