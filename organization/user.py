@@ -1,10 +1,10 @@
 from enum import Enum
 
-class UserTypes(Enum):
-    Stakeholder = 1
-    Developer = 2
-    ProjectOwner = 3
-    OrganizationOwner = 4
+class UserType(Enum):
+    STAKEHOLDER = 1
+    DEVELOPER = 2
+    PROJECTOWNER = 3
+    ORGANIZATIONOWNER = 4
 
 class User:
     def __init__(self, name, role):
