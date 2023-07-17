@@ -1,5 +1,5 @@
 user.ini
-**/__pycache__/
+**/__pycache__
 **/.pytest_cache
 
 # Byte-compiled / optimized / DLL files
