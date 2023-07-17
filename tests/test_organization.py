@@ -12,5 +12,5 @@ def test_mytest():
         raise_exception()
 
 def test_organization():
-    assert org.get_name() == ORGANIZATION_NAME
-    assert len(org.get_backlog_item_types()) == 5
+    assert org.organization_name == ORGANIZATION_NAME
+    assert len(org.backlog_item_types) == 5

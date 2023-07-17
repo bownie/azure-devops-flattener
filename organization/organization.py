@@ -1,24 +1,17 @@
 import uuid
 from .backlog_item_type import BacklogItemType
+from .backlog_item_type import BacklogItemTypes
 
 class Organization:
-    org_name: str
-    org_uuid: str
-    backlog_item_types = []
-
     def __init__(self, name):
-        self.org_name = name
-        self.org_uuid = uuid.uuid4
+        self.organization_name = name
+        self.organization_uuid = uuid.uuid4
+        self.backlog_item_types = []
+        self.backlog_items = []
 
         # build items
-        self.backlog_item_types.append(BacklogItemType("Feature", 1))
-        self.backlog_item_types.append(BacklogItemType("Epic", 2))
-        self.backlog_item_types.append(BacklogItemType("User Story", 3))
-        self.backlog_item_types.append(BacklogItemType("Task", 4))
-        self.backlog_item_types.append(BacklogItemType("Spike", 5))
-
-    def get_name(self) -> str:
-        return self.org_name
-    
-    def get_backlog_item_types(self):
-        return self.backlog_item_types
+        self.backlog_item_types.append(BacklogItemType(BacklogItemTypes.FEATURE, "Feature"))
+        self.backlog_item_types.append(BacklogItemType(BacklogItemTypes.EPIC, "Epic"))
+        self.backlog_item_types.append(BacklogItemType(BacklogItemTypes.USER_STORY, "User Story"))
+        self.backlog_item_types.append(BacklogItemType(BacklogItemTypes.TASK, "Task"))
+        self.backlog_item_types.append(BacklogItemType(BacklogItemTypes.SPIKE, "Spike"))

@@ -1,6 +1,7 @@
 {    
     "python.linting.enabled": true,
     "pylint.args": ["--disable", "redefined-outer-name",
-                    "--disable", "missing-function-docstring"],
-    "python.linting.pylintArgs": ["--disable=C0111,C0115,C0116"]
+                    "--disable", "missing-function-docstring",
+                    "--disable", "missing-class-docstring"],
+    "python.linting.pylintArgs": ["--disable=C0111", "--disable=C0115", "--disable=C0116"]
 }
