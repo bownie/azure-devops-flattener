@@ -13,3 +13,4 @@ def test_mytest():
 
 def test_organization():
     assert org.get_name() == ORGANIZATION_NAME
+    assert len(org.get_backlog_item_types()) == 5
