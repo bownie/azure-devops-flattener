@@ -1,15 +1,15 @@
 import pytest
 import organization.organization
 
-organization_name = "Test Organization"
-org = organization.organization.Organization(organization_name)
+ORGANIZATION_NAME = "Test Organization"
+org = organization.organization.Organization(ORGANIZATION_NAME)
 
-def f():
+def test_exception():
     raise SystemExit(1)
 
 def test_mytest():
     with pytest.raises(SystemExit):
-        f()
+        test_exception()
 
 def test_organization():
-    assert org.get_name() == organization_name
+    assert org.get_name() == ORGANIZATION_NAME

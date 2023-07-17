@@ -1,14 +1,6 @@
 import pprint
 import organization.organization
 
-org = organization.organization.Organization()
+org = organization.organization.Organization("my organization")
 
 pprint.pprint("Org name = " + org.get_name())
-
-# content of test_sample.py
-def func(x):
-    return x + 1
-
-
-def test_answer():
-    assert func(3) == 5
