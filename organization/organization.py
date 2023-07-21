@@ -1,6 +1,6 @@
 import uuid
-import names
 import pprint
+import names
 from .backlog_item_type import BacklogItemType
 from .backlog_item_type import BacklogItemTypes
 from .backlog import Backlog
@@ -10,7 +10,7 @@ from .user import UserType
 class Organization:
     def __init__(self, name):
         self.organization_name = name
-        self.organization_uuid = uuid.uuid4
+        self.organization_uuid = uuid.uuid4()
         self.backlog_item_types = []
         self.backlog_items = []
         self.users = []
@@ -37,7 +37,7 @@ class Organization:
     def create_product_team(self, product_team_name, team_size: int):
         team = Team(product_team_name)
 
-        for x in range(team_size):
+        for current_team in range(team_size):
             full_name = names.get_full_name()
             team.add_user(full_name, UserType.STAKEHOLDER)
 
@@ -51,3 +51,9 @@ class Organization:
 
     def pretty_print(self):
         pprint.pprint(self)
+
+    def __str__(self) -> str:
+        return f"{self.organization_name} (id: {self.organization_uuid})"
+
+    def __repr__(self) -> str:
+        return f'Organization(\'{self.organization_name}\')'

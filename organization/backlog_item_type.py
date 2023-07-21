@@ -7,6 +7,7 @@ class BacklogItemTypes(Enum):
     USER_STORY = 3
     TASK = 4
     SPIKE = 5
+    BUG = 6
 
 class BacklogItemType():
     def __init__(self, type_id, name):
